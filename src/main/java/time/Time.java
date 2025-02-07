@@ -1,4 +1,4 @@
-package com.example;
+package time;
 
 public class Time {
     protected int secondi;
@@ -19,7 +19,7 @@ public class Time {
      * Vengono addizionati il numero di secondi specificati.
      * 
      * Il tempo viene normalizzato in automatico.
-     * @param secondi - numero di secondi da aggiungere
+     * @param secondi numero di secondi da aggiungere
      */
     public void addSecondi(int secondi) {
         while (this.secondi >= 60) {
@@ -43,32 +43,60 @@ public class Time {
         return (ore * 3600) + (minuti * 60) + secondi;
     }
 
-    public int getMinuti() {
-        return minuti;
-    }
-
-    public int getOre() {
-        return ore;
-    }
-
+    /**
+     * Restituisce il numero di secondi
+     * @return il numero di secondi dell'oggetto Time
+     */
     public int getSecondi() {
         return secondi;
     }
 
+    /**
+     * @deprecated
+     * @param secondi
+     */
+    public void setSecondi(int secondi) {
+        this.secondi = secondi;
+    }
+    
+    /**
+     * Restituisce il numero di minuti
+     * @return il numero di minuti dell'oggetto Time
+     */
+    public int getMinuti() {
+        return minuti;
+    }
+
+    /**
+     * @deprecated
+     * @param minuti 
+     */
     public void setMinuti(int minuti) {
         this.minuti = minuti;
     }
 
+    /**
+     * Restituisce il numero delle ore
+     * @return il numero di ore dell'oggetto Time
+     */
+    public int getOre() {
+        return ore;
+    }
+
+    /**
+     * @deprecated
+     * @param ore
+     */
     public void setOre(int ore) {
         this.ore = ore;
     }
 
-    public void setSecondi(int secondi) {
-        this.secondi = secondi;
-    }
-
+    /**
+     * Restituisce una stringa che rappresenta l'oggetto
+     * @return Rappresentazione testuale dell'oggetto Time {ore:minuti:secondi}
+     */
     @Override
     public String toString() {
-        return "";
+        return ore + ":" + minuti + ":" + secondi;
     }
 }
